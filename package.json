@@ -1,0 +1,25 @@
+{
+  "name": "forkify-app",
+  "version": "1.0.0",
+  "description": "Forkify is a web app that allows users to explore various dishes and recipes. Users can search for specific food items, view different recipe varieties, and even create and store their own recipes locally.",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umeshsiddarth/Forkify-App.git"
+  },
+  "author": "Umesh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/umeshsiddarth/Forkify-App/issues"
+  },
+  "homepage": "https://github.com/umeshsiddarth/Forkify-App#readme",
+  "dependencies": {
+    "parcel": "^2.11.0"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.11.0"
+  }
+}
