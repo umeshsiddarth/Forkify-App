@@ -14,6 +14,10 @@ Forkify is a web app that allows users to explore various dishes and recipes. Us
 - Uploading new recipes, with access limited to the creator
 - Writing clean code
 
+## Architecture Used
+
+Model-View-Controller(MVC) Architecture
+
 ## Learning Outcomes
 
 Throughout the course of this project, you will gain practical experience and understanding of the following concepts:
@@ -25,26 +29,22 @@ Throughout the course of this project, you will gain practical experience and un
 - Local storage usage for storing user data
 - Uploading and managing user-generated content
 - Writing clean and efficient JavaScript code
+- Following Industry standard architecture like MVC
 
 ## Project Features
 
-
 ## Challenges and Solutions
-
 
 ## Code Structure and Architecture
 
-
-
 ## Technologies Used
 
-- 
+-
 
 ## Future Enhancements
 
-- 
+-
 
 ## Acknowledgments
 
 This project is based on the curriculum and teachings of the 'The Complete JavaScript Course' by Jonas Schmedtmann. Special thanks to Jonas for providing valuable insights and guidance in learning JavaScript and web development.
-
