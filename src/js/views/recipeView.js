@@ -4,6 +4,8 @@ import { Fraction } from "fractional";
 class RecipeView {
   #parentElement = document.querySelector(".recipe");
   #data;
+  #errorMessage = "We could not find that recipe. Please try another one!";
+  #successMessage = "";
   render(data) {
     this.#data = data;
     const html = this.#generateHTML();
@@ -15,7 +17,7 @@ class RecipeView {
     this.#parentElement.innerHTML = "";
   }
 
-  renderSpinner = function () {
+  renderSpinner() {
     const html = `
       <div class="spinner">
         <svg>
@@ -25,7 +27,33 @@ class RecipeView {
     `;
     this.#clear();
     this.#parentElement.insertAdjacentHTML("afterbegin", html);
-  };
+  }
+
+  renderError(message = this.#errorMessage) {
+    const html = `<div class="error">
+      <div>
+        <svg>
+          <use href="${icons}#icon-alert-triangle"></use>
+        </svg>
+      </div>
+      <p>${message}</p>
+    </div>`;
+    this.#clear();
+    this.#parentElement.insertAdjacentHTML("afterbegin", html);
+  }
+
+  renderSuccessMessage(message = this.#successMessage) {
+    const html = `
+      <div class="message">
+          <div>
+            <svg>
+              <use href="${icons}#icon-smile"></use>
+            </svg>
+          </div>
+          <p>${message}</p>
+      </div>
+    `;
+  }
 
   addHandlerRender(handler) {
     ["hashchange", "load"].forEach((event) =>
@@ -88,38 +116,35 @@ class RecipeView {
         <use href="${icons}#icon-bookmark-fill"></use>
       </svg>
     </button>
-  </div>
+    </div>
 
-  <div class="recipe__ingredients">
-    <h2 class="heading--2">Recipe ingredients</h2>
-    <ul class="recipe__ingredient-list">
-    ${this.#data.ingredients.map(this.#generateHTMLIngredient).join("")}
-  
+    <div class="recipe__ingredients">
+      <h2 class="heading--2">Recipe ingredients</h2>
+      <ul class="recipe__ingredient-list">
+      ${this.#data.ingredients.map(this.#generateHTMLIngredient).join("")}
+    </ul>
+    </div>
 
-  
-</ul>
-</div>
-
-<div class="recipe__directions">
-<h2 class="heading--2">How to cook it</h2>
-<p class="recipe__directions-text">
-  This recipe was carefully designed and tested by
-  <span class="recipe__publisher">${
-    this.#data.publisher
-  }</span>. Please check out
-  directions at their website.
-</p>
-<a
-  class="btn--small recipe__btn"
-  href="${this.#data.sourceUrl}"
-  target="_blank"
->
-  <span>Directions</span>
-  <svg class="search__icon">
-    <use href="${icons}/icons.svg#icon-arrow-right"></use>
-  </svg>
-</a>
-</div>`;
+    <div class="recipe__directions">
+    <h2 class="heading--2">How to cook it</h2>
+    <p class="recipe__directions-text">
+      This recipe was carefully designed and tested by
+      <span class="recipe__publisher">${
+        this.#data.publisher
+      }</span>. Please check out
+      directions at their website.
+    </p>
+    <a
+      class="btn--small recipe__btn"
+      href="${this.#data.sourceUrl}"
+      target="_blank"
+    >
+      <span>Directions</span>
+      <svg class="search__icon">
+        <use href="${icons}/icons.svg#icon-arrow-right"></use>
+      </svg>
+    </a>
+    </div>`;
   }
 
   #generateHTMLIngredient(ing) {
