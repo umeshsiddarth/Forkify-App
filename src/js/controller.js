@@ -26,13 +26,13 @@ const controlRecipes = async function () {
     recipeView.renderSpinner();
     // We are not storing any result in a variable because the loadReciper async function doesn't return anything
     await model.loadRecipe(id);
-
     recipeView.render(model.state.recipe);
   } catch (err) {
     console.log(err);
   }
 };
 
-["hashchange", "load"].forEach((event) =>
-  window.addEventListener(event, controlRecipes)
-);
+const init = function () {
+  recipeView.addHandlerRender(controlRecipes);
+};
+init();
