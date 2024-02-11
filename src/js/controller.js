@@ -6,6 +6,10 @@ import recipeView from "./views/recipeView.js";
 import searchView from "./views/searchView.js";
 import resultsView from "./views/resultsView.js";
 
+if (module.hot) {
+  module.hot.accept();
+}
+
 const recipeContainer = document.querySelector(".recipe");
 
 const timeout = function (s) {
@@ -44,11 +48,12 @@ const controlSearchResults = async function () {
     // Load Query
     const query = searchView.getQuery();
     if (!query) return;
+
     // Load and render search results
     await model.loadSearchResult(`${query}`);
-    console.log(model.state.search.results);
+    resultsView.render(model.state.search.results);
   } catch (error) {
-    recipeView.renderError("Cannot find the search results!");
+    resultsView.renderError();
   }
 };
 
