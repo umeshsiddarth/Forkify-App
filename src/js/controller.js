@@ -9,14 +9,6 @@ import paginationView from "./views/paginationView.js";
 
 const recipeContainer = document.querySelector(".recipe");
 
-const timeout = function (s) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(new Error(`Request took too long! Timeout after ${s} second`));
-    }, s * 1000);
-  });
-};
-
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
@@ -25,11 +17,14 @@ const controlRecipes = async function () {
   try {
     //Get id from window
     const id = window.location.hash.slice(1);
-    if (!id) return renderSpinner(recipeContainer);
+    if (!id) return;
 
     // Render loader
     recipeView.renderSpinner();
     // We are not storing any result in a variable because the loadReciper async function doesn't return anything
+
+    //Update results view to mark selected search result
+    resultsView.update(model.getSearchResultsPage());
 
     //Load Recipe and render content
     await model.loadRecipe(id);
@@ -73,7 +68,8 @@ function controlServings(newServings) {
   // Update the recipe servings in state
   model.updateServings(newServings);
   // Update recipe view
-  recipeView.render(model.state.recipe);
+  // recipeView.render(model.state.recipe);
+  recipeView.update(model.state.recipe);
 }
 
 const init = function () {
