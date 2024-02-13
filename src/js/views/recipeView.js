@@ -1,5 +1,5 @@
 import icons from "url:../../img/icons.svg";
-import "fracty";
+// import "fracty";
 import View from "./view.js";
 
 class RecipeView extends View {
@@ -130,7 +130,8 @@ class RecipeView extends View {
           <use href="${icons}/icons.svg#icon-check"></use>
         </svg>
         <div class="recipe__quantity">${
-          ing.quantity ? fracty(ing.quantity).toString() : ""
+          // ing.quantity ? fracty(ing.quantity).toString() : ""
+          ing.quantity
         }</div>
         <div class="recipe__description">
           <span class="recipe__unit">${ing.unit}</span>
