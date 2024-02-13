@@ -2,9 +2,10 @@
   "name": "forkify-app",
   "version": "1.0.0",
   "description": "Forkify is a web app that allows users to explore various dishes and recipes. Users can search for specific food items, view different recipe varieties, and even create and store their own recipes locally.",
+  "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "repository": {
     "type": "git",
