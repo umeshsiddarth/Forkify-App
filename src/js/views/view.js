@@ -2,7 +2,15 @@ import icons from "url:../../img/icons.svg";
 
 export default class View {
   _data;
-  // We are adding 2nd parameter render = true/false because in bookmark view and result view tha child class preview view itself will try to generate a markup but we are in need of a string. We need to use the render method in bookmark and resultssview because of the requirement to pass in data. To counter this we are adding a 2nd parameter and based on its value the render method will work.
+
+  /**
+   * Render the received object to the DOM
+   * @param {Object | Object[]} data The data to be rendered. (e.g. recipe)
+   * @param {boolean} [render = true] If false, create markup string instead of rendering to the DOM
+   * @returns {undefined | string} A markup string is returned if render = false
+   * @this {object} View instance
+   * @author Umesh Siddarth
+   */
   render(data, render = true) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderError();
