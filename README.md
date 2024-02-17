@@ -4,7 +4,7 @@ This project is part of the JavaScript course titled 'The Complete JavaScript Co
 
 ### Demo
 
-<a href='https://forkify-umesh.netlify.app/' target='\_blank'>Forkify By Umesh</a>
+<a href='https://forkify-umesh.netlify.app/' target='_blank'>Forkify By Umesh</a>
 
 ## Project Overview
 
