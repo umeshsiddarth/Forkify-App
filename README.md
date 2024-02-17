@@ -4,7 +4,7 @@ This project is part of the JavaScript course titled 'The Complete JavaScript Co
 
 ### Demo
 
-[Forkify by Umesh](https://forkify-umesh.netlify.app/)
+[Forkify by Umesh](https://forkify-umesh.netlify.app/){:target="\_blank"}
 
 ## Project Overview
 
