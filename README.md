@@ -2,6 +2,10 @@
 
 This project is part of the JavaScript course titled 'The Complete JavaScript Course' by Jonas Schmedtmann. The primary goal of this project is to implement JavaScript functionalities while utilizing the provided HTML/CSS files as starter templates.
 
+### Demo
+
+[Forkify by Umesh](https://forkify-umesh.netlify.app/)
+
 ## Project Overview
 
 Forkify is a web app that allows users to explore various dishes and recipes. Users can search for specific food items, view different recipe varieties, and even create and store their own recipes locally. The project covers a range of important concepts in web development using JavaScript, including:
@@ -82,10 +86,6 @@ core-js is employed to provide essential polyfills for modern JavaScript feature
 ### Forkify API
 
 The Forkify API serves as a valuable resource for accessing an extensive database of recipes. It powers the recipe search and retrieval functionality in the application.
-
-### Demo
-
-[Forkify by Umesh](https://forkify-umesh.netlify.app/)
 
 ## Development Tools
 
