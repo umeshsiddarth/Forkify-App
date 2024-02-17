@@ -83,6 +83,10 @@ core-js is employed to provide essential polyfills for modern JavaScript feature
 
 The Forkify API serves as a valuable resource for accessing an extensive database of recipes. It powers the recipe search and retrieval functionality in the application.
 
+### Demo
+
+[Forkify by Umesh](https://forkify-umesh.netlify.app/)
+
 ## Development Tools
 
 ### Parcel
